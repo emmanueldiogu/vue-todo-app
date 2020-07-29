@@ -1,0 +1,15 @@
+.checked {
+  text-decoration: line-through;
+}
+.list-item {
+  margin-top: 10px;
+}
+.errors {
+  color: red;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  color: red;
+}

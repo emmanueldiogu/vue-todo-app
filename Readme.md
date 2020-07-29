@@ -1,0 +1,2 @@
+# Todo App Using Vue CDN
+This performs is used to create basic todo list. The when you have completed a task, you can click on the item to mark as done. If an item is mistakely added, the x botton can be used to delete from the list. Use the button show all list item or show undone item to toggle between items that have not been completed and entire list items.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <p v-if="errors.length" >
+      <div v-for="error in errors" class="errors"> {{ error }}</div>
+    </p>
+    <form @submit.prevent="addTodoItem">
+      <input type="text" v-model="newTodoItem">
+      <input type="submit" value="Add Todo List">
+    </form>
+    <p>
+      {{ undoneTodos.length }} incomplete task(s)
+    </p>
+    <button @click="doneTodos = !doneTodos">
+      Click to {{ doneTodos ? 'Show all' : 'Show undone' }} todo list
+    </button>
+    <ul>
+      <li v-for="todo in filterDoneAndUndone" class="list-item"
+      :key="todo.text" 
+      :class="{checked: todo.done}" 
+      @click="todo.done = !todo.done">
+        {{ todo.text }}       
+        <button class="btn" @click="deleteItem(todo)">X</button>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
